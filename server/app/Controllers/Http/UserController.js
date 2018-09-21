@@ -10,6 +10,7 @@ class UserController {
     }
 
     async register({ request }){
+        console.log('cadastro')
         const { email, password } = request.all();
         console.log(email, password)
         await User.create({
