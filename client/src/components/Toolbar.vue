@@ -14,7 +14,7 @@
         <v-icon class="mr-2">account_box</v-icon>
         Cadastro
       </v-btn>
-      <v-btn flat v-if="!isLoggedIn">
+      <v-btn flat v-if="!isLoggedIn" to="/login">
         <v-icon class="mr-2">fingerprint</v-icon>
         Login
       </v-btn>

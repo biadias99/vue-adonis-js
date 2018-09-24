@@ -1,5 +1,6 @@
 'use strict'
 
+const Mail = use('Mail');
 const User = use('App/Models/User');
 
 class UserController {
@@ -10,15 +11,24 @@ class UserController {
     }
 
     async register({ request }){
-        console.log('cadastro')
         const { email, password } = request.all();
-        console.log(email, password)
         await User.create({
             email,
             password, 
             username: email,
         });
         return this.login(...arguments);
+    }
+
+    async welcome({ request }){
+        const name = "Usuário";
+        const { email } = request.only(['email']);
+        await Mail.send('emails.welcome', { name: name}, (message) => {
+            message.from('Vue-adonis-js <noreply@example.com>')
+            message.to(email)
+            message.subject('Bem-vindo ao nosso sistema!')
+            console.log('enviado')
+        })
     }
 }
 

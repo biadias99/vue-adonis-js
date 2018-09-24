@@ -1,17 +1,17 @@
 <template>
     <v-container>
         <vue-headful
-          title="Cadastro"
-          description="Cadastro of the project"
+          title="Login"
+          description="Login of the project"
         />
         <v-layout row wrap>
             <v-flex xs6 offset-xs3>
-                <h1>Cadastro</h1>
+                <h1>Login</h1>
                 <v-text-field 
                 label="Email" 
                 placeholder="Email"
-                :value="registerEmail"
-                @input="setRegisterEmail"
+                :value="loginEmail"
+                @input="setLoginEmail"
                 >
 
                 </v-text-field>
@@ -21,23 +21,23 @@
                 placeholder="Password"
                 type="password"
                 autocomplete="new-password"
-                :value="registerPassword"
-                @input="setRegisterPassword"
+                :value="loginPassword"
+                @input="setLoginPassword"
                 >
 
                 </v-text-field>
                 <v-alert
                     type="error"
-                    :value="registerError"
+                    :value="loginError"
                 >
-                {{ registerError }}
+                {{ loginError }}
                 </v-alert>
                 
-                <v-btn @click="registerUser()" color="green" dark>
+                <v-btn @click="login" color="green" dark>
                     <v-icon>
-                        account_circle
+                        fingerprint
                     </v-icon>
-                    Cadastro
+                    Login
                 </v-btn>
             </v-flex>
         </v-layout>
@@ -50,25 +50,20 @@ import { mapState, mapMutations, mapActions } from 'vuex';
 export default {
     computed: {
         ...mapState('authentication',[
-            'registerEmail',
-            'registerPassword',
-            'registerError',
+            'loginEmail',
+            'loginPassword',
+            'loginError',
         ]),
     },
     methods: {
         ...mapMutations('authentication', [
-            'setRegisterEmail',
-            'setRegisterPassword',
-            'setRegisterError',
+            'setLoginEmail',
+            'setLoginPassword',
+            'setLoginError',
         ]),
         ...mapActions('authentication',[
-            'register',
-            'sendEmail',
+            'login',
         ]),
-        registerUser(){
-            this.register();
-            this.sendEmail();     
-        },
     },
 };
 </script>

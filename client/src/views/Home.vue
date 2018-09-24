@@ -1,5 +1,9 @@
 <template>
   <div class="home">
+    <vue-headful
+          title="Home"
+          description="Home of the project"
+    />
     <img alt="Vue logo" src="../assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
