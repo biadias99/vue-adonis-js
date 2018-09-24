@@ -24,7 +24,13 @@ export default {
                 password: state.registerPassword,
             }).then(({ data }) => {
                 commit('setToken',data.token);
-                router.push('/');
+                return HTTP().post('/auth/sendEmail',{
+                    email: state.registerEmail,
+                }).then(() => {
+                    router.push('/');
+                }).catch(() =>{
+                    commit('setRegisterError', 'Erro ao enviar o email!');
+                });
             }).catch(() =>{
                 commit('setRegisterError', 'Informação inválida! Por favor, digite novamente.');
             });
@@ -39,16 +45,6 @@ export default {
                 router.push('/');
             }).catch(() =>{
                 commit('setLoginError', 'Email ou senha incorretos!');
-            });
-        },
-        sendEmail({ commit, state }){
-            commit('setRegisterError',null);
-            return HTTP().post('/auth/sendEmail',{
-                email: state.registerEmail,
-            }).then(() => {
-                router.push('/');
-            }).catch(() =>{
-                commit('setRegisterError', 'Erro ao enviar o email!');
             });
         },
     },

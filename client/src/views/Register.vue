@@ -33,7 +33,7 @@
                 {{ registerError }}
                 </v-alert>
                 
-                <v-btn @click="registerUser()" color="green" dark>
+                <v-btn @click="register" color="green" dark>
                     <v-icon>
                         account_circle
                     </v-icon>
@@ -63,12 +63,7 @@ export default {
         ]),
         ...mapActions('authentication',[
             'register',
-            'sendEmail',
-        ]),
-        registerUser(){
-            this.register();
-            this.sendEmail();     
-        },
+        ])
     },
 };
 </script>
