@@ -30,7 +30,7 @@ export default{
   color: #2c3e50;
 }
 #nav {
-  padding: 30px;
+  padding: 20px;
   a {
     font-weight: bold;
     color: #2c3e50;

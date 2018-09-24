@@ -4,8 +4,12 @@
           title="Home"
           description="Home of the project"
     />
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <v-flex xs12>
+        <v-img
+          src="https://cdn.vuetifyjs.com/images/parallax/material2.jpg"
+          gradient="to top right, rgba(100,115,201,.33), rgba(25,32,72,.7)"
+        ></v-img>
+    </v-flex>
   </div>
 </template>
 

@@ -3,6 +3,10 @@
     <!-- <v-toolbar-side-icon></v-toolbar-side-icon> -->
     <v-toolbar-title class="mr-4">Vue Adonis.JS</v-toolbar-title>
     <v-toolbar-items>
+      <v-btn flat to="/">
+        <v-icon class="mr-2">home</v-icon>
+        Home
+      </v-btn>
       <v-btn flat>
         <v-icon class="mr-2">playlist_add_check</v-icon>
         Projetos
@@ -11,7 +15,7 @@
     <v-spacer></v-spacer>
     <v-toolbar-items class="hidden-sm-and-down">
       <v-btn flat v-if="!isLoggedIn" to="/register">
-        <v-icon class="mr-2">account_box</v-icon>
+        <v-icon class="mr-2">account_circle</v-icon>
         Cadastro
       </v-btn>
       <v-btn flat v-if="!isLoggedIn" to="/login">
