@@ -27,6 +27,7 @@
     "@adonisjs/mail": "^3.0.8",
     "adonis-fold": "^3.0.3",
     "adonis-mail-provider": "^2.0.2",
+    "mysql": "^2.16.0",
     "sqlite3": "^4.0.2"
   },
   "devDependencies": {},
